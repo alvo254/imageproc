@@ -1,0 +1,47 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+        "Effect": "Allow",
+        "Action": [
+          "logs:CreateLogGroup",
+          "logs:CreateLogStream",
+          "logs:PutLogEvents",
+          "ec2:DescribeNetworkInterfaces",
+          "ec2:CreateNetworkInterface",
+          "ec2:DeleteNetworkInterface",
+          "ec2:DescribeInstances",
+          "ec2:AttachNetworkInterface"
+        ],
+        "Resource": "*"
+      },
+      {
+        "Effect": "Allow",
+        "Action": [
+          "s3:GetObject",
+          "s3:ListBucket"
+        ],
+        "Resource": [
+          "arn:aws:s3:::facefinder/*",
+          "arn:aws:s3:::facefinder"
+        ]
+      },
+      {
+        "Effect": "Allow",
+        "Action": [
+          "dynamodb:PutItem"
+        ],
+        "Resource": "arn:aws:dynamodb:*:*:table/FaceImages"
+      },
+      {
+        "Effect": "Allow",
+        "Action": "rekognition:*",
+        "Resource": "*"
+      },
+      {
+        "Effect": "Allow",
+        "Action": "s3:PutBucketNotificationConfiguration",
+        "Resource": "arn:aws:s3:::facefinder"
+      }
+    ]
+  }
