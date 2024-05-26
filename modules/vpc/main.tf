@@ -10,6 +10,8 @@ resource "aws_vpc" "imgproc" {
 
 }
 
+
+
 data "aws_availability_zones" "available_zones" {}
 
 resource "aws_subnet" "public_imgproc_subnet" {
